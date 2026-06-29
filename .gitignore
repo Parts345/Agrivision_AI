@@ -15,7 +15,7 @@ backend/.venv/
 .vscode/
 
 # AI Model
-*.h5
+model/*.h5
 
 # TensorFlow checkpoints
 checkpoints/
