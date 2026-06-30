@@ -81,7 +81,7 @@ export default function Detect() {
           <p className="mt-4 max-w-2xl leading-7 text-slate-600 dark:text-slate-300">
             Drag, drop, browse, or capture a leaf photo. The frontend sends it to FastAPI at POST /predict and renders confidence, treatment, prevention, and symptom intelligence.
           </p>
-        </div>
+        </div>  
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="glass-panel p-5"><Microscope className="text-chlorophyll" /><p className="mt-3 font-black">CBAM model</p></div>
           <div className="glass-panel p-5"><Sparkles className="text-cyber" /><p className="mt-3 font-black">Animated UX</p></div>
@@ -98,7 +98,13 @@ export default function Detect() {
             onClick={() => inputRef.current?.click()}
           >
             {preview ? (
-              <img src={preview} alt="Uploaded rice leaf preview" className="h-full w-full rounded-3xl object-cover" />
+              <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-3xl bg-slate-100 dark:bg-slate-900">
+  <img
+    src={preview}
+    alt="Uploaded rice leaf preview"
+    className="max-h-full max-w-full object-contain"
+  />
+</div>
             ) : (
               <div className="text-center">
                 <CloudUpload className="mx-auto text-chlorophyll" size={100} />
